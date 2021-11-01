@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 11/01/21 21:12:26 by Eclipse SUMO GUI Version 1.8.0
+<!-- generated on 11/01/21 21:27:15 by Eclipse SUMO GUI Version 1.8.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
 
     <input>
-        <net-file value="F:\sumo_pro\main\zhangshijie.net.xml"/>
-        <route-files value="F:\sumo_pro\main\routes1.rou.xml"/>
+        <net-file value="F:\sumo_pro/traci_main\main\zhangshijie.net.xml"/>
+        <route-files value="F:\sumo_pro/traci_main\main\routes1.rou.xml"/>
     </input>
 
     <output>
-        <tripinfo-output value="F:\sumo_pro\main/tripinfo2_TEST.xml"/>
+        <tripinfo-output value="F:\sumo_pro/traci_main/main/tripinfo2_TEST.xml"/>
     </output>
 
     <time>
@@ -23,11 +23,11 @@
     </report>
 
     <traci_server>
-        <remote-port value="56213"/>
+        <remote-port value="65399"/>
     </traci_server>
 
     <gui_only>
-        <gui-settings-file value="F:\sumo_pro\main\gui-settings2.cfg"/>
+        <gui-settings-file value="F:\sumo_pro/traci_main\main\gui-settings2.cfg"/>
         <quit-on-end value="true"/>
         <start value="true"/>
     </gui_only>

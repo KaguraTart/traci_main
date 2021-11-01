@@ -18,9 +18,11 @@ import  time
 
 #-----引入地址------
 sumo_path = "F:\\software two\\sumo-1.8.0"
-project_path =  "F:\sumo_pro\main"
-cfg_path = "F:\sumo_pro\main\zhangshijie.sumo.cfg"
+project_path =  "F:\sumo_pro/traci_main/main"
+cfg_path = "F:\sumo_pro/traci_main\main\zhangshijie.sumo.cfg"
 #----------------------------------------#
+
+
 
 #---------------------#
 sys.path.append(sumo_path)
