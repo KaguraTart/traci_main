@@ -136,7 +136,7 @@ def traci_control_env_update(step_time):
         #获取车辆是否经过车线
 
         #---按照帧率输出车辆位置信息---#
-        ocd.output_car_data2(step,project_path)
+        # ocd.output_car_data2(step,project_path)
 
         try :# 获取截屏方法
             pass
