@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+# @auther:	KaguraTart
+# @time:	2021/10/31 14:50:27
+# @version:	python3.8
+# @institution:Tongji university
+
 from typing import Counter
 import  traci
 import  numpy as np
