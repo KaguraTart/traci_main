@@ -11,7 +11,7 @@
       callFollowMode="carFollowing-W99" departSpeed = "max" maxSpeed="20" 
     actionStepLength="1"  laneChangeModel="SL2015" lcStrategic="1000" cc1="1.1"/>
 
-    <vType id="zhongxinghuoche" vClass = "taxi" accei = "0.4" decel = "4.5"
+    <vType id="zhongxinghuoche" vClass = "truck" accei = "0.4" decel = "4.5"
      length = "9.6" callFollowMode="carFollowing-W99" departSpeed = "max" maxSpeed="20" 
     actionStepLength="1"  laneChangeModel="SL2015" cc1="1.1"/>
 
@@ -19,7 +19,7 @@
      callFollowMode="carFollowing-W99" departSpeed = "max" maxSpeed="20" 
     actionStepLength="1"  laneChangeModel="SL2015" lcStrategic="1000" cc1="1.1"/>
 
-   <vType id="tedaxinghuoche" vClass = "truck" accei = "0.4" decel = "4.5"   length = "16"
+   <vType id="tedaxinghuoche" vClass = "trailer" accei = "0.4" decel = "4.5"   length = "16"
      callFollowMode="carFollowing-W99" departSpeed = "max" maxSpeed="20" 
     actionStepLength="1"  laneChangeModel="SL2015" lcStrategic="1000" cc1="1.1"/>
 
