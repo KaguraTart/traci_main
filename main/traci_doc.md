@@ -14,3 +14,5 @@
 Multiprocessing
 
 思考进行并行计算的可能
+
+用threading包可以开多个线程一起跑
