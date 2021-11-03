@@ -20,7 +20,8 @@ import  time
 #-----引入地址------
 sumo_path = "F:\\software two\\sumo-1.8.0"
 project_path =  "F:\sumo_pro/traci_main/main"
-cfg_path = "F:\sumo_pro/traci_main\main\zhangshijie.sumo.cfg"
+# cfg_path = "F:\sumo_pro/traci_main\main\zhangshijie.sumo.cfg"
+cfg_path = "F:\software two\sumo-1.8.0/file1/test1.sumo.cfg"
 #----------------------------------------#
 
 
@@ -184,5 +185,5 @@ if __name__ == "__main__":
         #     q_table_train.to_excel(r'F:\software two\sumo-1.8.0/file1/doc2/'+'qtable'+str(episode)+'.xlsx',index=False)
         # episode +=1
         print('------------------------------------------------')
-    q_table_train.to_csv(project_path+"/output_data"+"/Aoutput"+".csv")
+    q_table_train.to_csv(project_path+"/output_data"+"/Aoutput3"+".csv")
     print('--------------------END----------------------------')
