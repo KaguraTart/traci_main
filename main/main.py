@@ -36,8 +36,8 @@ from sumolib import checkBinary
 # import xml2csv
 
 #------导入自己写的包-------
+import output_car_data2 as ocd2
 import output_car_data as ocd
-
 
 #绘图图式
 plt.rcParams['figure.figsize']=(30,10)
@@ -84,8 +84,7 @@ H_2_car_speed = 0
 H_3_car_speed = 0
 H_4_car_speed = 0
 
-
-
+# output_data1 = pd.DataFrame()
     
 
 #traci控制
@@ -137,8 +136,15 @@ def traci_control_env_update(step_time):
         #获取车辆是否经过车线
 
         #---按照帧率输出车辆位置信息---#
-        # ocd.output_car_data2(step,project_path)
-
+        # print(ocd2.output_car_data2(step,project_path))
+        out_data = ocd2.output_car_data2(step,project_path)
+        
+        if step ==0:
+            output_data1 = out_data
+        else:
+            output_data1 = pd.concat([output_data1,out_data],axis=0,ignore_index=True)
+        
+        # print(output_data1)
         try :# 获取截屏方法
             pass
             # 获取截屏
@@ -149,14 +155,15 @@ def traci_control_env_update(step_time):
 
         #步长控制
         traci.simulationStep(step +1)
-        time.sleep(0.08)
-
+        # time.sleep(0.08)
+    
     traci.close(wait=True)
-    return 0
+    return output_data1
 
 
 if __name__ == "__main__":
  #运行sumo
+    # output_data1 = pd.DataFrame(columns=['car_num','x_position','y_position','x_acce(m^2/s)','y_acce(m^2/s)','length(m)','speed(m/s)','LateralSpeed(m/s)','accelaration(m^2/s)','angel(du)','roadID','LaneID','Lane_index','lane_position'],dtype=float)
     MAX_EPISODES= 1
     N_STATES = 1200
     # traci.gui.setSchema('View #0','cus')  #改变GUI为真实车辆
@@ -176,5 +183,6 @@ if __name__ == "__main__":
         # if episode % 20 == 0:
         #     q_table_train.to_excel(r'F:\software two\sumo-1.8.0/file1/doc2/'+'qtable'+str(episode)+'.xlsx',index=False)
         # episode +=1
-
         print('------------------------------------------------')
+    q_table_train.to_csv(project_path+"/output_data"+"/Aoutput"+".csv")
+    print('--------------------END----------------------------')
