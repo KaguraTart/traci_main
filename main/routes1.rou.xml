@@ -3,7 +3,7 @@
      length = "4" callFollowMode="carFollowing-W99" departSpeed = "max" maxSpeed="20" 
     actionStepLength="1"  laneChangeModel="SL2015" cc1="1.1"/>
 
-    <vType id="dakeche" vClass = "truck" accei = "0.4" decel = "4.5"  length = "11"
+    <vType id="dakeche" vClass = "hov" accei = "0.4" decel = "4.5"  length = "11"
       callFollowMode="carFollowing-W99" departSpeed = "max" maxSpeed="20" 
     actionStepLength="1"  laneChangeModel="SL2015" lcStrategic="1000" cc1="1.1"/>
 

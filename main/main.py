@@ -149,7 +149,7 @@ def traci_control_env_update(step_time):
 
         #步长控制
         traci.simulationStep(step +1)
-        # time.sleep(0.08)
+        time.sleep(0.08)
 
     traci.close(wait=True)
     return 0
