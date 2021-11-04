@@ -98,27 +98,10 @@ def traci_control_env_update(step_time):
     # ----设置限速-----
     for i in range(0,5):
         traci.lane.setMaxSpeed('H_'+str(i),27.78)
-    # traci.lane.setMaxSpeed('H_0',20)
-    # traci.lane.setMaxSpeed('H_1',20)
-    # traci.lane.setMaxSpeed('H_2',20)
-    # traci.lane.setMaxSpeed('H_3',20)
-    # traci.lane.setMaxSpeed('H_4',20)
+
+
     for step in range(0,step_time):
 
-
-        # H_0_meanspeed_list.append(traci.lane.getLastStepMeanSpeed('H_0')*3.6)
-        # H_1_meanspeed_list.append(traci.lane.getLastStepMeanSpeed('H_1')*3.6)
-        # H_2_meanspeed_list.append(traci.lane.getLastStepMeanSpeed('H_2')*3.6)
-        # H_3_meanspeed_list.append(traci.lane.getLastStepMeanSpeed('H_3')*3.6)
-        # H_4_meanspeed_list.append(traci.lane.getLastStepMeanSpeed('H_4')*3.6)
-        # H_12_meanspeed =(traci.lane.getLastStepMeanSpeed('H_1')*3.6+traci.lane.getLastStepMeanSpeed('H_2')*3.6)/2
-        # get_OOC0_list.append(traci.lane.getLastStepOccupancy('H_0')*100)
-        # get_OOC1_list.append(traci.lane.getLastStepOccupancy('H_1')*100)
-        # get_OOC2_list.append(traci.lane.getLastStepOccupancy('H_2')*100)
-        # get_OOC3_list.append(traci.lane.getLastStepOccupancy('H_3')*100)
-        # get_OOC4_list.append(traci.lane.getLastStepOccupancy('H_4')*100)
-        # get_OOCall_list.append((traci.lane.getLastStepOccupancy('H_0')+traci.lane.getLastStepOccupancy('H_1')+
-        # traci.lane.getLastStepOccupancy('H_2')+traci.lane.getLastStepOccupancy('H_3')+traci.lane.getLastStepOccupancy('H_4'))/4*100)
 
     
         #交通信号灯控制
@@ -138,13 +121,20 @@ def traci_control_env_update(step_time):
 
         #---按照帧率输出车辆位置信息---#
         # print(ocd2.output_car_data2(step,project_path))
-        out_data = ocd2.output_car_data2(step,project_path)
+        # out_data = ocd2.output_car_data2(step,project_path)
         
+        # if step ==0:
+            # output_data1 = out_data
+        # else:
+            # output_data1 = pd.concat([output_data1,out_data],axis=0,ignore_index=True)
+        
+        # out_data = ocd2.output_car_data2(step,project_path)
+
         if step ==0:
-            output_data1 = out_data
+            output_data1 = ocd2.output_car_data2(step,project_path)
         else:
-            output_data1 = pd.concat([output_data1,out_data],axis=0,ignore_index=True)
-        
+            output_data1 = pd.concat([output_data1,ocd2.output_car_data2(step,project_path)],axis=0,ignore_index=True)
+
         # print(output_data1)
         try :# 获取截屏方法
             pass
@@ -165,25 +155,14 @@ def traci_control_env_update(step_time):
 if __name__ == "__main__":
  #运行sumo
     # output_data1 = pd.DataFrame(columns=['car_num','x_position','y_position','x_acce(m^2/s)','y_acce(m^2/s)','length(m)','speed(m/s)','LateralSpeed(m/s)','accelaration(m^2/s)','angel(du)','roadID','LaneID','Lane_index','lane_position'],dtype=float)
-    MAX_EPISODES= 1
+
     N_STATES = 1200
     # traci.gui.setSchema('View #0','cus')  #改变GUI为真实车辆
-    for episode in range(MAX_EPISODES):
-        H_0_meanspeed_list =[]
-        H_1_meanspeed_list =[]
-        H_2_meanspeed_list =[]
-        H_3_meanspeed_list =[]
-        H_4_meanspeed_list =[]
-        get_OOC0_list = []
-        get_OOC1_list = []
-        get_OOC2_list = []
-        get_OOC3_list = []
-        get_OOC4_list = []
-        get_OOCall_list = []
-        q_table_train = traci_control_env_update(N_STATES)
+
+    # q_table_train = traci_control_env_update(N_STATES)
         # if episode % 20 == 0:
         #     q_table_train.to_excel(r'F:\software two\sumo-1.8.0/file1/doc2/'+'qtable'+str(episode)+'.xlsx',index=False)
         # episode +=1
-        print('------------------------------------------------')
-    q_table_train.to_csv(project_path+"/output_data"+"/Aoutput3"+".csv")
+    print('------------------------------------------------')
+    traci_control_env_update(N_STATES).to_csv(project_path+"/output_data"+"/Aoutput4"+".csv")
     print('--------------------END----------------------------')
