@@ -24,7 +24,9 @@
     actionStepLength="1"  laneChangeModel="SL2015" lcStrategic="1000" cc1="1.1"/>
 
 
-    <flow id="xiaokeche4" color="0,1,0" begin="0" end="7200" vehsPerHour="1000" departLane="random" type="xiaokeche" from="mainlane01" to="mainlane_16" >
-      
-    </flow>
+    <flow id="xiaokeche1" color="1,1,0" begin="0" end="7200" vehsPerHour="1000" departLane="random" type="xiaokeche" from="mainlane01" to="mainlane_16" />
+    <flow id="xiaokeche2" color="0,1,0" begin="0" end="7200" vehsPerHour="1000" departLane="random" type="xiaokeche" from="mainlane01" to="mainlane_16" />
+    <flow id="xiaokeche3" color="0,1,1" begin="0" end="7200" vehsPerHour="1000" departLane="random" type="xiaokeche" from="mainlane01" to="mainlane_16" />
+    <flow id="xiaokeche5" color="0,0,1" begin="0" end="7200" vehsPerHour="1000" departLane="random" type="xiaokeche" from="mainlane01" to="mainlane_16" />
+    <flow id="xiaokeche4" color="0,1,0" begin="0" end="7200" vehsPerHour="1000" departLane="random" type="daxinghuoche" from="mainlane01" to="mainlane_16" />
 </routes> 

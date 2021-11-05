@@ -15,7 +15,7 @@ import math
 from datetime import datetime, date
 import os, sys
 import  time
-
+import tqdm
 
 #-----引入地址------
 sumo_path = "F:\\software two\\sumo-1.10.0"
@@ -129,12 +129,13 @@ def traci_control_env_update(step_time):
             # output_data1 = pd.concat([output_data1,out_data],axis=0,ignore_index=True)
         
         # out_data = ocd2.output_car_data2(step,project_path)
-        output_data1 = 0
-        # if step ==0:
-        #     output_data1 = ocd2.output_car_data2(step,project_path)
-        # else:
-        #     output_data1 = pd.concat([output_data1,ocd2.output_car_data2(step,project_path)],axis=0,ignore_index=True)
+        # output_data1 = 0
+        if step ==0:
+            output_data1 = ocd2.output_car_data2(step,project_path)
+        else:
+            output_data1 = pd.concat([output_data1,ocd2.output_car_data2(step,project_path)],axis=0,ignore_index=True)
 
+        # ocd.output_car_data2(step,project_path)
         # print(output_data1)
         try :# 获取截屏方法
             pass
@@ -146,17 +147,18 @@ def traci_control_env_update(step_time):
 
         #步长控制
         traci.simulationStep(step +1)
-        time.sleep(0.005)
+        # time.sleep(0.05)
     
     traci.close(wait=True)
-    return output_data1
+    # return output_data1
+    return 0 
 
 
 if __name__ == "__main__":
  #运行sumo
     # output_data1 = pd.DataFrame(columns=['car_num','x_position','y_position','x_acce(m^2/s)','y_acce(m^2/s)','length(m)','speed(m/s)','LateralSpeed(m/s)','accelaration(m^2/s)','angel(du)','roadID','LaneID','Lane_index','lane_position'],dtype=float)
 
-    N_STATES = 12000
+    N_STATES = 1200
     # traci.gui.setSchema('View #0','cus')  #改变GUI为真实车辆
 
     # q_table_train = traci_control_env_update(N_STATES)
@@ -164,5 +166,10 @@ if __name__ == "__main__":
         #     q_table_train.to_excel(r'F:\software two\sumo-1.8.0/file1/doc2/'+'qtable'+str(episode)+'.xlsx',index=False)
         # episode +=1
     print('------------------------------------------------')
-    traci_control_env_update(N_STATES).to_csv(project_path+"/output_data"+"/Aoutput4"+".csv")
+    a = traci_control_env_update(N_STATES)
+    # try:
+    #     a.to_csv(project_path+"/output_data"+"/Aoutput5"+".csv")
+    # except:
+    #     os.makedirs(project_path+"/output_data") 
+    #     a.to_csv(project_path+"/output_data"+"/Aoutput5"+".csv")
     print('--------------------END----------------------------')

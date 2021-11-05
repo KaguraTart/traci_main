@@ -1,0 +1,4 @@
+,car_num,x_position,y_position,x_acce(m^2/s),y_acce(m^2/s),length(m),speed(m/s),LateralSpeed(m/s),accelaration(m^2/s),angel(du),roadID,LaneID,Lane_index,lane_position
+0,xiaokeche1.0,935.4268469797023,10999.318991491487,0.0,0.0,4.0,0.0,0.0,0.0,201.3442949470194,mainlane01,mainlane01_1,1.0,4.1
+1,xiaokeche2.0,942.4118131299082,10996.602190224621,0.0,0.0,4.0,0.0,0.0,0.0,201.29589680860306,mainlane01,mainlane01_3,3.0,4.1
+2,xiaokeche4.0,935.6325432423962,10989.582369677015,0.0,0.0,13.0,0.0,0.0,0.0,201.38936212504657,mainlane01,mainlane01_2,2.0,13.1

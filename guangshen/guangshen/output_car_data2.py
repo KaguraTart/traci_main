@@ -9,7 +9,7 @@ import  traci
 import  numpy as np
 import  pandas as pd
 import os
-
+import tqdm
 def output_car_data2(step,project_path):
 
     position_data = pd.DataFrame(columns=['simu_time','car_num','x_position','y_position','x_acce(m^2/s)','y_acce(m^2/s)','length(m)','speed(m/s)','LateralSpeed(m/s)','accelaration(m^2/s)','angel(du)','roadID','LaneID','Lane_index','lane_position'],dtype=float)
