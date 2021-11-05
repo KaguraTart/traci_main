@@ -1,32 +1,97 @@
 <routes>
-    <vType id="xiaokeche" vClass = "taxi" accei = "0.4" decel = "4.5"
-     length = "4" callFollowMode="carFollowing-W99" departSpeed = "max" maxSpeed="20" 
+    <vType id="xiaokeche" vClass = "private" accei = "0.4" decel = "4.5"
+     length = "4" callFollowMode="carFollowing-W99" departSpeed = "desired" maxSpeed="33.33" 
     actionStepLength="1"  laneChangeModel="SL2015" cc1="1.1"/>
 
-    <vType id="dakeche" vClass = "hov" accei = "0.4" decel = "4.5"  length = "11"
-      callFollowMode="carFollowing-W99" departSpeed = "max" maxSpeed="20" 
+    <vType id="dakeche" vClass = "bus" accei = "0.4" decel = "4.5"  length = "11"
+      callFollowMode="carFollowing-W99" departSpeed = "desired" maxSpeed="27.78" 
     actionStepLength="1"  laneChangeModel="SL2015" lcStrategic="1000" cc1="1.1"/>
 
    <vType id="xiaoxinghuoche" vClass = "truck" accei = "0.4" decel = "4.5"   length = "6"
-      callFollowMode="carFollowing-W99" departSpeed = "max" maxSpeed="20" 
+      callFollowMode="carFollowing-W99" departSpeed = "desired" maxSpeed="27.78" 
     actionStepLength="1"  laneChangeModel="SL2015" lcStrategic="1000" cc1="1.1"/>
 
     <vType id="zhongxinghuoche" vClass = "truck" accei = "0.4" decel = "4.5"
-     length = "9.6" callFollowMode="carFollowing-W99" departSpeed = "max" maxSpeed="20" 
+     length = "9.6" callFollowMode="carFollowing-W99" departSpeed = "desired" maxSpeed="27.78" 
     actionStepLength="1"  laneChangeModel="SL2015" cc1="1.1"/>
 
     <vType id="daxinghuoche" vClass = "truck" accei = "0.4" decel = "4.5"  length = "13"
-     callFollowMode="carFollowing-W99" departSpeed = "max" maxSpeed="20" 
+     callFollowMode="carFollowing-W99" departSpeed = "desired" maxSpeed="27.78" 
     actionStepLength="1"  laneChangeModel="SL2015" lcStrategic="1000" cc1="1.1"/>
 
    <vType id="tedaxinghuoche" vClass = "trailer" accei = "0.4" decel = "4.5"   length = "16"
-     callFollowMode="carFollowing-W99" departSpeed = "max" maxSpeed="20" 
+     callFollowMode="carFollowing-W99" departSpeed = "desired" maxSpeed="27.78" 
     actionStepLength="1"  laneChangeModel="SL2015" lcStrategic="1000" cc1="1.1"/>
 
 
-    <flow id="xiaokeche1" color="1,1,0" begin="0" end="7200" vehsPerHour="1000" departLane="random" type="xiaokeche" from="mainlane01" to="mainlane_16" />
-    <flow id="xiaokeche2" color="0,1,0" begin="0" end="7200" vehsPerHour="1000" departLane="random" type="xiaokeche" from="mainlane01" to="mainlane_16" />
-    <flow id="xiaokeche3" color="0,1,1" begin="0" end="7200" vehsPerHour="1000" departLane="random" type="xiaokeche" from="mainlane01" to="mainlane_16" />
-    <flow id="xiaokeche5" color="0,0,1" begin="0" end="7200" vehsPerHour="1000" departLane="random" type="xiaokeche" from="mainlane01" to="mainlane_16" />
-    <flow id="xiaokeche4" color="0,1,0" begin="0" end="7200" vehsPerHour="1000" departLane="random" type="daxinghuoche" from="mainlane01" to="mainlane_16" />
+    <flow id="xiaokeche_zhixing" color="1,1,0" begin="0" end="72000" vehsPerHour="5418" departLane="best" 
+    type="xiaokeche" from="mainlane01" to="mainlane_16"  departPos="random"/>
+
+
+    <flow id="dakeche_zhixing" color="0,1,0" begin="0" end="72000" vehsPerHour="169" departLane="first" 
+    type="dakeche" from="mainlane01" to="mainlane_16"  departPos="random" />
+
+    <flow id="xiaoxinghuoche_zhixing" color="0,1,1" begin="0" end="72000" vehsPerHour="593" departLane="first"
+     type="xiaoxinghuoche" from="mainlane01" to="mainlane_16"  departPos="random" />
+
+    <flow id="zhongxinghuoche_zhixing" color="0,0,1" begin="0" end="72000" vehsPerHour="91" departLane="first"
+     type="zhongxinghuoche" from="mainlane01" to="mainlane_16"  departPos="random" />
+
+
+    <flow id="daxinghuoche_zhixing" color="0,1,0" begin="0" end="72000" vehsPerHour="266" departLane="first"
+     type="daxinghuoche" from="mainlane01" to="mainlane_16"  departPos="random" />
+
+     <flow id="tedaxinghuoche_zhixing" color="0,1,0" begin="0" end="72000" vehsPerHour="198" departLane="first"
+     type="tedaxinghuoche" from="mainlane01" to="mainlane_16"  departPos="random" />
+
+
+     
+
+
+
+
+     <flow id="xiaokeche_houjienan_chu" color="1,1,0" begin="0" end="72000" vehsPerHour="1489" departLane="best" 
+     type="xiaokeche" from="mainlane01" to="HJN_ZC"  departPos="random"/>
+ 
+ 
+     <flow id="dakeche_houjienan_chu" color="0,1,0" begin="0" end="72000" vehsPerHour="49" departLane="first" 
+     type="dakeche" from="mainlane01" to="HJN_ZC"  departPos="random" />
+ 
+     <flow id="xiaoxinghuoche_houjienan_chu" color="0,1,1" begin="0" end="72000" vehsPerHour="153" departLane="first"
+      type="xiaoxinghuoche" from="mainlane01" to="HJN_ZC"  departPos="random" />
+ 
+     <flow id="zhongxinghuoche_houjienan_chu" color="0,0,1" begin="0" end="72000" vehsPerHour="15" departLane="first"
+      type="zhongxinghuoche" from="mainlane01" to="HJN_ZC"  departPos="random" />
+ 
+ 
+     <flow id="daxinghuoche_houjienan_chu" color="0,1,0" begin="0" end="72000" vehsPerHour="106" departLane="first"
+      type="daxinghuoche" from="mainlane01" to="HJN_ZC"  departPos="random" />
+ 
+      <flow id="tedaxinghuoche_houjienan_chu" color="0,1,0" begin="0" end="72000" vehsPerHour="89" departLane="first"
+      type="tedaxinghuoche" from="mainlane01" to="HJN_ZC"  departPos="random" />
+
+
+
+
+
+
+      <flow id="xiaokeche_houjienan_ru" color="1,1,0" begin="0" end="72000" vehsPerHour="1489" departLane="best" 
+      type="xiaokeche" from="HJN_ZR2" to="mainlane_16"  departPos="random"/>
+  
+  
+      <flow id="dakeche_houjienan_ru" color="0,1,0" begin="0" end="72000" vehsPerHour="49" departLane="first" 
+      type="dakeche" from="HJN_ZR2" to="mainlane_16"  departPos="random" />
+  
+      <flow id="xiaoxinghuoche_houjienan_ru" color="0,1,1" begin="0" end="72000" vehsPerHour="153" departLane="first"
+       type="xiaoxinghuoche" from="HJN_ZR2" to="mainlane_16"  departPos="random" />
+  
+      <flow id="zhongxinghuoche_houjienan_ru" color="0,0,1" begin="0" end="72000" vehsPerHour="15" departLane="first"
+       type="zhongxinghuoche" from="HJN_ZR2" to="mainlane_16"  departPos="random" />
+  
+  
+      <flow id="daxinghuoche_houjienan_ru" color="0,1,0" begin="0" end="72000" vehsPerHour="106" departLane="first"
+       type="daxinghuoche" from="HJN_ZR2" to="mainlane_16"  departPos="random" />
+  
+       <flow id="tedaxinghuoche_houjienan_ru" color="0,1,0" begin="0" end="72000" vehsPerHour="89" departLane="first"
+       type="tedaxinghuoche" from="HJN_ZR2" to="mainlane_16"  departPos="random" />
 </routes> 
