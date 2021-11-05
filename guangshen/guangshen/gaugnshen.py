@@ -130,12 +130,12 @@ def traci_control_env_update(step_time):
         
         # out_data = ocd2.output_car_data2(step,project_path)
         # output_data1 = 0
-        if step ==0:
-            output_data1 = ocd2.output_car_data2(step,project_path)
-        else:
-            output_data1 = pd.concat([output_data1,ocd2.output_car_data2(step,project_path)],axis=0,ignore_index=True)
+        # if step ==0:
+        #     output_data1 = ocd2.output_car_data2(step,project_path)
+        # else:
+        #     output_data1 = pd.concat([output_data1,ocd2.output_car_data2(step,project_path)],axis=0,ignore_index=True)
 
-        # ocd.output_car_data2(step,project_path)
+        ocd.output_car_data2(step,project_path)
         # print(output_data1)
         try :# 获取截屏方法
             pass

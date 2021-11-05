@@ -45,8 +45,8 @@ def output_car_data2(step,project_path):
         position_data.loc[n] = [all_vehicle_id[n],all_vehicle_position[0],all_vehicle_position[1],x_acce,y_acce,get_vehicle_length,get_speed,get_lateral_speed,all_vehicle_accelatatioin,get_angle,get_roadID,get_laneID,get_lane_index,get_lane_position]
         n +=1
     # print(position_data)
-    try:
-        position_data.to_csv(project_path+"/output_data/for"+str(step)+"seconds"+".csv")
-    except:
-        os.makedirs(project_path+"/output_data") 
-        position_data.to_csv(project_path+"/output_data"+"/for"+str(step)+"seconds"+".csv")
+    # try:
+    #     position_data.to_csv(project_path+"/output_data/for"+str(step)+"seconds"+".csv")
+    # except:
+    #     os.makedirs(project_path+"/output_data") 
+    #     position_data.to_csv(project_path+"/output_data"+"/for"+str(step)+"seconds"+".csv")
