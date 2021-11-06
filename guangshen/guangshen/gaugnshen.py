@@ -147,7 +147,7 @@ def traci_control_env_update(step_time):
 
         #步长控制
         traci.simulationStep(step +1)
-        time.sleep(0.05)
+        # time.sleep(0.05)
     
     traci.close(wait=True)
     # return output_data1
@@ -158,7 +158,7 @@ if __name__ == "__main__":
  #运行sumo
     # output_data1 = pd.DataFrame(columns=['car_num','x_position','y_position','x_acce(m^2/s)','y_acce(m^2/s)','length(m)','speed(m/s)','LateralSpeed(m/s)','accelaration(m^2/s)','angel(du)','roadID','LaneID','Lane_index','lane_position'],dtype=float)
 
-    N_STATES = 12000
+    N_STATES = 1200
     # traci.gui.setSchema('View #0','cus')  #改变GUI为真实车辆
 
     # q_table_train = traci_control_env_update(N_STATES)
