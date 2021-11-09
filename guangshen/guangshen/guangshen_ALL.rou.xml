@@ -146,4 +146,54 @@
     
          <flow id="tedaxinghuoche_taiping_ru" color="0,1,0" begin="0" end="72000" vehsPerHour="89" departLane="first"
          type="tedaxinghuoche" from="TP_ZR1" to="mainlane_16"  departPos="random" />
+
+
+
+
+
+         <flow id="xiaokeche_xinlian_chu" color="1,1,0" begin="0" end="72000" vehsPerHour="584" departLane="best" 
+         type="xiaokeche" from="mainlane01" to="XL_ZC2"  departPos="random"/>
+     
+     
+         <flow id="dakeche_xinlian_chu" color="0,1,0" begin="0" end="72000" vehsPerHour="14" departLane="first" 
+         type="dakeche" from="mainlane01" to="XL_ZC2"  departPos="random" />
+     
+         <flow id="xiaoxinghuoche_xinlian_chu" color="0,1,1" begin="0" end="72000" vehsPerHour="80" departLane="first"
+          type="xiaoxinghuoche" from="mainlane01" to="XL_ZC2"  departPos="random" />
+     
+         <flow id="zhongxinghuoche_xinlian_chu" color="0,0,1" begin="0" end="72000" vehsPerHour="8" departLane="first"
+          type="zhongxinghuoche" from="mainlane01" to="XL_ZC2"  departPos="random" />
+     
+     
+         <flow id="daxinghuoche_xinlian_chu" color="0,1,0" begin="0" end="72000" vehsPerHour="76" departLane="first"
+          type="daxinghuoche" from="mainlane01" to="XL_ZC2"  departPos="random" />
+     
+          <flow id="tedaxinghuoche_xinlian_chu" color="0,1,0" begin="0" end="72000" vehsPerHour="94" departLane="first"
+          type="tedaxinghuoche" from="mainlane01" to="XL_ZC2"  departPos="random" />
+
+
+
+
+
+
+
+          <flow id="xiaokeche_taiping_chu" color="1,1,0" begin="0" end="72000" vehsPerHour="1015" departLane="best" 
+          type="xiaokeche" from="mainlane01" to="TP_ZC2"  departPos="random"/>
+      
+      
+          <flow id="dakeche_taiping_chu" color="0,1,0" begin="0" end="72000" vehsPerHour="42" departLane="first" 
+          type="dakeche" from="mainlane01" to="TP_ZC2"  departPos="random" />
+      
+          <flow id="xiaoxinghuoche_taiping_chu" color="0,1,1" begin="0" end="72000" vehsPerHour="111" departLane="first"
+           type="xiaoxinghuoche" from="mainlane01" to="TP_ZC2"  departPos="random" />
+      
+          <flow id="zhongxinghuoche_taiping_chu" color="0,0,1" begin="0" end="72000" vehsPerHour="15" departLane="first"
+           type="zhongxinghuoche" from="mainlane01" to="TP_ZC2"  departPos="random" />
+      
+      
+          <flow id="daxinghuoche_taiping_chu" color="0,1,0" begin="0" end="72000" vehsPerHour="106" departLane="first"
+           type="daxinghuoche" from="mainlane01" to="TP_ZC2"  departPos="random" />
+      
+           <flow id="tedaxinghuoche_taiping_chu" color="0,1,0" begin="0" end="72000" vehsPerHour="74" departLane="first"
+           type="tedaxinghuoche" from="mainlane01" to="TP_ZC2"  departPos="random" />
 </routes> 
