@@ -23,28 +23,19 @@
      callFollowMode="carFollowing-W99" departSpeed = "max" maxSpeed="20" 
     actionStepLength="1"  laneChangeModel="SL2015" lcStrategic="1000" cc1="1.1"/>
 
-    <flow id="xiaokeche" color="0,1,0" begin="0" end="7200" period="1" type="xiaokeche" departLane ='0' >
-      <route edges=" H "/> 
-    </flow>
-
-    <flow id="dakeche" color="1,1,0" begin="0" end="7200" vehsPerHour="4000" type="dakeche" departLane ='4' >
-      <route edges=" H "/> 
-    </flow>
-
-    <flow id="xiaoxinghuoche" color="0,0,1" begin="0" end="7200" vehsPerHour="4000" type="xiaoxinghuoche" departLane ='3' >
-      <route edges=" H "/> 
-    </flow>
-
-    <flow id="zhongxinghuoche" color="1,1,1" begin="0" end="7200" period="1" type="zhongxinghuoche" departLane ='2' >
-      <route edges=" H "/> 
-    </flow>
-
-    <flow id="daxinghuoche" color="1,0,1" begin="0" end="7200" vehsPerHour="4000" type="daxinghuoche" departLane ='1' >
-      <route edges=" H "/> 
-    </flow>
-
-    <flow id="tedaxinghuoche" color="1,0,0" begin="0" end="7200" vehsPerHour="4000" type="tedaxinghuoche" departLane ='0' >
-      <route edges=" H "/> 
-    </flow>
+  <flow id="xiaokeche_mainlane0_" color="0,1,0" begin="0" end="7200" vehsPerHour="1500" type="xiaokeche" departLane='0'
+      from = "main0" to = "main1" />
+    
+    <flow id="xiaokeche_mainlane1_" color="0,1,0" begin="0" end="7200" vehsPerHour="1500" type="xiaokeche" departLane ='1'
+      from = "main0" to = "main1" />
+    
+    <flow id="xiaokeche_mainlane2_" color="0,1,0" begin="0" end="7200" vehsPerHour="1500" type="xiaokeche" departLane ='2'
+      from = "main0" to = "main1" />
+    
+    <flow id="xiaokeche_mainlane3_" color="0,1,0" begin="0" end="7200" vehsPerHour="1500" type="xiaokeche" departLane ='3'
+      from = "main0" to = "main1" />
+    
+    <flow id="xiaokeche_mainlane4_" color="0,1,0" begin="0" end="7200" vehsPerHour="1500" type="xiaokeche" departLane ='4'
+      from = "main0" to = "main1" />
 
 </routes> 

@@ -19,9 +19,9 @@ import  time
 
 #-----引入地址------
 sumo_path = "F:\\software two\\sumo-1.8.0"
-project_path =  "F:\sumo_pro/traci_main/main"
+project_path =  "F:\sumo_pro\\traci_main\\test1"
 # cfg_path = "F:\sumo_pro/traci_main\main\zhangshijie.sumo.cfg"
-cfg_path = "F:\software two\sumo-1.8.0/file1/test1.sumo.cfg"
+cfg_path = "F:\sumo_pro\\traci_main\\test1/zhangshijie.sumo.cfg"
 #----------------------------------------#
 
 
@@ -94,15 +94,11 @@ def traci_control_env_update(step_time):
     traci.start(sumoCmd)
 
     # 仿真延迟
-    
-    # ----设置限速-----
-    for i in range(0,5):
-        traci.lane.setMaxSpeed('H_'+str(i),27.78)
-
 
     for step in range(0,step_time):
 
-
+        if step ==200:
+            traci.vehicle.a
     
         #交通信号灯控制
         # traci.trafficlight.setRedYellowGreenState(traci.trafficlight.getIDList()[0], choose_action(step, q_table)+'G')  #trafficlight_control(step)  trafficlight_control2(step)
@@ -156,7 +152,7 @@ if __name__ == "__main__":
  #运行sumo
     # output_data1 = pd.DataFrame(columns=['car_num','x_position','y_position','x_acce(m^2/s)','y_acce(m^2/s)','length(m)','speed(m/s)','LateralSpeed(m/s)','accelaration(m^2/s)','angel(du)','roadID','LaneID','Lane_index','lane_position'],dtype=float)
 
-    N_STATES = 1200
+    N_STATES = 300
     # traci.gui.setSchema('View #0','cus')  #改变GUI为真实车辆
 
     # q_table_train = traci_control_env_update(N_STATES)
@@ -164,5 +160,10 @@ if __name__ == "__main__":
         #     q_table_train.to_excel(r'F:\software two\sumo-1.8.0/file1/doc2/'+'qtable'+str(episode)+'.xlsx',index=False)
         # episode +=1
     print('------------------------------------------------')
-    traci_control_env_update(N_STATES).to_csv(project_path+"/output_data"+"/Aoutput4"+".csv")
+    a = traci_control_env_update(N_STATES)
+    try:
+        a.to_csv(project_path+"/output_data"+"/Aoutput"+".csv")
+    except:
+        os.makedirs(project_path+"/output_data") 
+        a.to_csv(project_path+"/output_data"+"/Aoutput"+".csv")
     print('--------------------END----------------------------')
