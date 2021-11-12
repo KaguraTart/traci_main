@@ -1,32 +1,44 @@
 <routes>
+  <!-- 车辆类型设置 需要设置 id vClass length departSpeed  maxSpeed -->
     <vType id="xiaokeche" vClass = "private" accei = "0.4" decel = "4.5"
      length = "4" callFollowMode="carFollowing-W99" departSpeed = "desired" maxSpeed="33.33" 
-    actionStepLength="1"  laneChangeModel="SL2015" cc1="1.1"/>
+    actionStepLength="1"  laneChangeModel="SL2015"  cc1="1.1" cc2="4" cc3="-8" 
+    cc4="0.35" cc5="0.35" cc6="11.44" cc7="0.25" cc8="3.5" cc9="1.5"/>
 
     <vType id="dakeche" vClass = "bus" accei = "0.4" decel = "4.5"  length = "11"
       callFollowMode="carFollowing-W99" departSpeed = "desired" maxSpeed="27.78" 
-    actionStepLength="1"  laneChangeModel="SL2015" lcStrategic="1000" cc1="1.1"/>
+    actionStepLength="1"  laneChangeModel="SL2015"  cc1="1.1" cc2="4" cc3="-8"
+     cc4="0.35" cc5="0.35" cc6="11.44" cc7="0.25" cc8="3.5" cc9="1.5"/>
 
    <vType id="xiaoxinghuoche" vClass = "truck" accei = "0.4" decel = "4.5"   length = "6"
       callFollowMode="carFollowing-W99" departSpeed = "desired" maxSpeed="27.78" 
-    actionStepLength="1"  laneChangeModel="SL2015" lcStrategic="1000" cc1="1.1"/>
+    actionStepLength="1"  laneChangeModel="SL2015"  cc1="1.1" 
+    cc2="4" cc3="-8" cc4="0.35" cc5="0.35" cc6="11.44" cc7="0.25" cc8="3.5" cc9="1.5"/>
 
     <vType id="zhongxinghuoche" vClass = "truck" accei = "0.4" decel = "4.5"
      length = "9.6" callFollowMode="carFollowing-W99" departSpeed = "desired" maxSpeed="27.78" 
-    actionStepLength="1"  laneChangeModel="SL2015" cc1="1.1"/>
+    actionStepLength="1"  laneChangeModel="SL2015" cc1="1.1" cc2="4" cc3="-8" 
+    cc4="0.35" cc5="0.35" cc6="11.44" cc7="0.25" cc8="3.5" cc9="1.5"/>
 
     <vType id="daxinghuoche" vClass = "truck" accei = "0.4" decel = "4.5"  length = "13"
      callFollowMode="carFollowing-W99" departSpeed = "desired" maxSpeed="27.78" 
-    actionStepLength="1"  laneChangeModel="SL2015" lcStrategic="1000" cc1="1.1"/>
+    actionStepLength="1"  laneChangeModel="SL2015"  cc1="1.1"
+     cc2="4" cc3="-8" cc4="0.35" cc5="0.35" cc6="11.44" cc7="0.25" cc8="3.5" cc9="1.5"/>
 
    <vType id="tedaxinghuoche" vClass = "trailer" accei = "0.4" decel = "4.5"   length = "16"
      callFollowMode="carFollowing-W99" departSpeed = "desired" maxSpeed="27.78" 
-    actionStepLength="1"  laneChangeModel="SL2015" lcStrategic="1000" cc1="1.1"/>
+    actionStepLength="1"  laneChangeModel="SL2015"  cc1="1.1" cc2="4" cc3="-8" 
+    cc4="0.35" cc5="0.35" cc6="11.44" cc7="0.25" cc8="3.5" cc9="1.5"/>
 
-
-    <flow id="xiaokeche_zhixing" color="1,1,0" begin="0" end="72000" vehsPerHour="5418" departLane="best" 
+<!-- 车流量设置 -->
+    <flow id="xiaokeche_4zhixing" color="1,1,0" begin="0" end="72000" vehsPerHour="2609" departLane="4" arrivalLane="5"
     type="xiaokeche" from="mainlane01" to="mainlane_16"  departPos="random"/>
 
+    <flow id="xiaokeche_3zhixing" color="0,1,0" begin="0" end="72000" vehsPerHour="2609" departLane="3" arrivalLane="4"
+    type="xiaokeche" from="mainlane01" to="mainlane_16"  departPos="random"/>
+
+    <flow id="xiaokeche_2zhixing" color="0,1,0" begin="0" end="72000" vehsPerHour="200" departLane="2"  arrivalLane="3"
+    type="xiaokeche" from="mainlane01" to="mainlane_16"  departPos="random"/>
 
     <flow id="dakeche_zhixing" color="0,1,0" begin="0" end="72000" vehsPerHour="169" departLane="first" 
     type="dakeche" from="mainlane01" to="mainlane_16"  departPos="random" />
@@ -41,7 +53,7 @@
     <flow id="daxinghuoche_zhixing" color="0,1,0" begin="0" end="72000" vehsPerHour="266" departLane="first"
      type="daxinghuoche" from="mainlane01" to="mainlane_16"  departPos="random" />
 
-     <flow id="tedaxinghuoche_zhixing" color="0,1,0" begin="0" end="72000" vehsPerHour="198" departLane="first"
+     <flow id="tedaxinghuoche_zhixing" color="0,1,0" begin="0" end="72000" vehsPerHour="198" departLane="0"
      type="tedaxinghuoche" from="mainlane01" to="mainlane_16"  departPos="random" />
 
 
@@ -103,7 +115,7 @@
 
 
 
-       <flow id="xiaokeche_xinlian_ru" color="1,1,0" begin="0" end="72000" vehsPerHour="106" departLane="best" 
+       <flow id="xiaokeche_xinlian_ru" color="1,1,0" begin="0" end="72000" vehsPerHour="106" departLane="best" arrivalLane="2" 
        type="xiaokeche" from="XL_ZR2" to="mainlane_16"  departPos="random"/>
    
    
@@ -127,7 +139,7 @@
 
 
 
-        <flow id="xiaokeche_taiping_ru" color="1,1,0" begin="0" end="72000" vehsPerHour="2242" departLane="best" 
+        <flow id="xiaokeche_taiping_ru" color="1,1,0" begin="0" end="72000" vehsPerHour="2242" departLane="best" arrivalLane="3"
         type="xiaokeche" from="TP_ZR1" to="mainlane_16"  departPos="random"/>
     
     
