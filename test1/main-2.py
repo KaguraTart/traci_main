@@ -21,7 +21,7 @@ import  time
 sumo_path = "F:\\software two\\sumo-1.8.0"
 project_path =  "F:\sumo_pro\\traci_main\\test1"
 # cfg_path = "F:\sumo_pro/traci_main\main\zhangshijie.sumo.cfg"
-cfg_path = "F:\sumo_pro\\traci_main\\test1/zhangshijie.sumo.cfg"
+cfg_path = "F:\sumo_pro\\traci_main\\test1/zhangshijie2.sumo.cfg"
 #----------------------------------------#
 
 
@@ -97,9 +97,13 @@ def traci_control_env_update(step_time):
 
     for step in range(0,step_time):
 
-        if step ==200:
-            traci.vehicle.a
-    
+        if step ==25:
+            traci.vehicle.add("control","route1",typeID="xiaokeche",departLane="4",)
+
+        if step == 48:
+            traci.vehicle.changeLane("control",5,6)
+        if step == 54:
+            traci.vehicle.setStop("control","main1",pos=200,laneIndex=5)
         #交通信号灯控制
         # traci.trafficlight.setRedYellowGreenState(traci.trafficlight.getIDList()[0], choose_action(step, q_table)+'G')  #trafficlight_control(step)  trafficlight_control2(step)
 
@@ -152,7 +156,7 @@ if __name__ == "__main__":
  #运行sumo
     # output_data1 = pd.DataFrame(columns=['car_num','x_position','y_position','x_acce(m^2/s)','y_acce(m^2/s)','length(m)','speed(m/s)','LateralSpeed(m/s)','accelaration(m^2/s)','angel(du)','roadID','LaneID','Lane_index','lane_position'],dtype=float)
 
-    N_STATES = 300
+    N_STATES = 120
     # traci.gui.setSchema('View #0','cus')  #改变GUI为真实车辆
 
     # q_table_train = traci_control_env_update(N_STATES)
@@ -161,9 +165,9 @@ if __name__ == "__main__":
         # episode +=1
     print('------------------------------------------------')
     a = traci_control_env_update(N_STATES)
-    try:
-        a.to_csv(project_path+"/output_data"+"/Aoutput"+".csv")
-    except:
-        os.makedirs(project_path+"/output_data") 
-        a.to_csv(project_path+"/output_data"+"/Aoutput"+".csv")
+    # try:
+    #     a.to_csv(project_path+"/output_data"+"/Aoutput"+".csv")
+    # except:
+    #     os.makedirs(project_path+"/output_data") 
+    #     a.to_csv(project_path+"/output_data"+"/Aoutput"+".csv")
     print('--------------------END----------------------------')
