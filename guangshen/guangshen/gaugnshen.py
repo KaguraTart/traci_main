@@ -123,10 +123,10 @@ def traci_control_env_update(step_time):
         # print(ocd2.output_car_data2(step,project_path))
         # out_data = ocd2.output_car_data2(step,project_path)
         
-        # if step ==0:
-            # output_data1 = out_data
-        # else:
-            # output_data1 = pd.concat([output_data1,out_data],axis=0,ignore_index=True)
+        if step ==0:
+            output_data1 = out_data
+        else:
+            output_data1 = pd.concat([output_data1,out_data],axis=0,ignore_index=True)
         
         # out_data = ocd2.output_car_data2(step,project_path)
         # output_data1 = 0
@@ -151,7 +151,7 @@ def traci_control_env_update(step_time):
     
     traci.close(wait=True)
     # return output_data1
-    return 0 
+    return output_data1
 
 
 if __name__ == "__main__":
