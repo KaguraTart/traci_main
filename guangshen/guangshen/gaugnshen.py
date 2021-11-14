@@ -68,22 +68,7 @@ sumoCmd = [sumoBinary, "-c", cfg_path ,'--tripinfo-output',project_path+"/tripin
 #仿真时间
 simulation_time =1200
 #-----画图全局变量--------
-H_0_meanspeed_list =[]
-H_1_meanspeed_list =[]
-H_2_meanspeed_list =[]
-H_3_meanspeed_list =[]
-H_4_meanspeed_list =[]
-get_OOC0_list = []
-get_OOC1_list = []
-get_OOC2_list = []
-get_OOC3_list = []
-get_OOC4_list = []
-get_OOCall_list = []
-H_0_car_speed = 0
-H_1_car_speed = 0
-H_2_car_speed = 0
-H_3_car_speed = 0
-H_4_car_speed = 0
+
 
 # output_data1 = pd.DataFrame()
     
