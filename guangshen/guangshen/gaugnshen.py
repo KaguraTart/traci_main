@@ -135,8 +135,8 @@ def traci_control_env_update(step_time):
         # time.sleep(0.005)
     
     traci.close(wait=True)
-    # return output_data1
-    return 0
+    return output_data1
+    # return 0
 
 
 if __name__ == "__main__":
