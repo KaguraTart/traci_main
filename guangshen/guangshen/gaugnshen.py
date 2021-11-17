@@ -135,7 +135,7 @@ def traci_control_env_update(step_time):
         # time.sleep(0.005)
     
     traci.close(wait=True)
-    return output_data12
+    return output_data123
     # return 0
 
 
