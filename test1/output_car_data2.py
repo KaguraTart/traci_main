@@ -12,7 +12,7 @@ import os
 
 def output_car_data2(step,project_path):
 
-    position_data = pd.DataFrame(columns=['simu_time','car_num','x_position','y_position','x_acce(m^2/s)','y_acce(m^2/s)','length(m)','speed(m/s)','LateralSpeed(m/s)','accelaration(m^2/s)','angel(du)','roadID','LaneID','Lane_index','lane_position'],dtype=float)
+    position_data = pd.DataFrame(columns=['simu_time','car_num','x_position','y_position','length(m)','speed(m/s)','LateralSpeed(m/s)','accelaration(m^2/s)','angel(du)','roadID','LaneID','Lane_index','lane_position'],dtype=float)
 
     #获取车辆ID
     all_vehicle_id = traci.vehicle.getIDList()
@@ -31,17 +31,11 @@ def output_car_data2(step,project_path):
         get_angle = traci.vehicle.getAngle(i)
         get_lane_index = traci.vehicle.getLaneIndex(i)
         get_lane_position = traci.vehicle.getLanePosition(i)
-        #计算加速度
-        if n == 0:
-            x_acce = 0
-            y_acce = 0
-        else:
-            x_acce = get_speed - traci.vehicle.getSpeed(all_vehicle_id[n-1])
-            y_acce = get_lateral_speed - traci.vehicle.getLateralSpeed(all_vehicle_id[n-1])
+
         
         # print(i)
         # print(all_vehicle_id[n])
-        position_data.loc[n] = [step,all_vehicle_id[n],all_vehicle_position[0],all_vehicle_position[1],x_acce,y_acce,get_vehicle_length,get_speed,get_lateral_speed,all_vehicle_accelatatioin,get_angle,get_roadID,get_laneID,get_lane_index,get_lane_position]
+        position_data.loc[n] = [step,all_vehicle_id[n],all_vehicle_position[0],all_vehicle_position[1],get_vehicle_length,get_speed,get_lateral_speed,all_vehicle_accelatatioin,get_angle,get_roadID,get_laneID,get_lane_index,get_lane_position]
         n +=1
     return position_data
     # print(position_data)

@@ -88,7 +88,7 @@ if __name__ == "__main__":
  #运行sumo
     # output_data1 = pd.DataFrame(columns=['car_num','x_position','y_position','x_acce(m^2/s)','y_acce(m^2/s)','length(m)','speed(m/s)','LateralSpeed(m/s)','accelaration(m^2/s)','angel(du)','roadID','LaneID','Lane_index','lane_position'],dtype=float)
 
-    N_STATES = 120
+    N_STATES = 65
 
     print('------------------------------------------------')
     a = traci_control_env_update(N_STATES)

@@ -32,7 +32,9 @@ sys.path.append(sumo_path+"/tools/xml")
 import traci
 from sumolib import checkBinary
 
-
+#------导入自己写的包-------
+import output_car_data2 as ocd2
+import output_car_data as ocd
 
 #是否打开gui True为打开 False为关闭
 gui = True
@@ -60,22 +62,25 @@ def traci_control_env_update(step_time):
 
         #步长控制
         traci.simulationStep(step +1)
-        time.sleep(0.05)
-        
+        # time.sleep(0.05)
+        if step ==0:
+            output_data1 = ocd2.output_car_data2(step,project_path)
+        else:
+            output_data1 = pd.concat([output_data1,ocd2.output_car_data2(step,project_path)],axis=0,ignore_index=True)
     
     traci.close(wait=True)
-    return 0
+    return output_data1
 
 
 if __name__ == "__main__":
 
-    N_STATES = 120
+    N_STATES = 60
 
     print('------------------------------------------------')
     a = traci_control_env_update(N_STATES)
-    # try:
-    #     a.to_csv(project_path+"/output_data"+"/Aoutput"+".csv")
-    # except:
-    #     os.makedirs(project_path+"/output_data") 
-    #     a.to_csv(project_path+"/output_data"+"/Aoutput"+".csv")
+    try:
+        a.to_csv(project_path+"/output_data"+"/Aoutput-1"+".csv")
+    except:
+        os.makedirs(project_path+"/output_data") 
+        a.to_csv(project_path+"/output_data"+"/Aoutput-2"+".csv")
     print('--------------------END----------------------------')
