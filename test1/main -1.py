@@ -79,8 +79,8 @@ if __name__ == "__main__":
     print('------------------------------------------------')
     a = traci_control_env_update(N_STATES)
     try:
-        a.to_csv(project_path+"/output_data"+"/Aoutput-1"+".csv")
+        a.to_csv(project_path+"/output_data"+"/Aoutput-x"+".csv")
     except:
         os.makedirs(project_path+"/output_data") 
-        a.to_csv(project_path+"/output_data"+"/Aoutput-2"+".csv")
+        a.to_csv(project_path+"/output_data"+"/Aoutput-x"+".csv")
     print('--------------------END----------------------------')
