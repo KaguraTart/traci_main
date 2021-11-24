@@ -74,7 +74,7 @@ def traci_control_env_update(step_time):
 
 if __name__ == "__main__":
 
-    N_STATES = 600
+    N_STATES = 100
 
     print('------------------------------------------------')
     a = traci_control_env_update(N_STATES)
